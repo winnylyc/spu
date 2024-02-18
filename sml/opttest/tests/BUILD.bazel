@@ -1,0 +1,23 @@
+load("@rules_python//python:defs.bzl", "py_test")
+
+package(default_visibility = ["//visibility:public"])
+
+py_test(
+    name = "rsqrt_test",
+    srcs = ["rsqrt_test.py"],
+    deps = [
+        "//sml/opttest:rsqrt",
+        "//spu:init",
+        "//spu/utils:simulation",
+    ],
+)
+
+py_test(
+    name = "mixmul_test",
+    srcs = ["mixmul_test.py"],
+    deps = [
+        "//sml/opttest:mixmul",
+        "//spu:init",
+        "//spu/utils:simulation",
+    ],
+)

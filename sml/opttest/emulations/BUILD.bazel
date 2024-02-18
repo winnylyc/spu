@@ -1,0 +1,12 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+
+package(default_visibility = ["//visibility:public"])
+
+py_binary(
+    name = "rsqrt_emul",
+    srcs = ["rsqrt_emul.py"],
+    deps = [
+        "//sml/opttest:rsqrt",
+        "//sml/utils:emulation",
+    ],
+)
