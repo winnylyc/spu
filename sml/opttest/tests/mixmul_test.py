@@ -37,13 +37,9 @@ class UnitTests(unittest.TestCase):
         config.enable_pphlo_profile = True
         config.enable_hal_profile = True
         sim = spsim.Simulator(3, config)
-        copts = spu_pb2.CompilerOptions()
-        copts.disallow_mix_types_opts = False
-        # X = jnp.array([[4, 1, 2, 2], [1, 3, 9, 3], [5, 7, 5, 1]])
-        # Y = jnp.array([[4.0, 1.0, 2.0, 2.0], [1.0, 3.0, 9.0, 3.0], [5.0, 7.0, 5.0, 1.0]])
         Y = jnp.array([[4, 1, 2, 2], [1, 3, 9, 3], [5, 7, 5, 1]])
         X = jnp.array([[4.0, 1.0, 2.0, 2.0], [1.0, 3.0, 9.0, 3.0], [5.0, 7.0, 5.0, 1.0]])
-        spu_fn = spsim.sim_jax(sim, func, copts=copts)
+        spu_fn = spsim.sim_jax(sim, func)
         result = spu_fn(X, Y)
         print(result)
         print(spu_fn.pphlo)

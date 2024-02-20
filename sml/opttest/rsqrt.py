@@ -38,13 +38,13 @@ import jax.numpy as jnp
 #     norms = norms.astype(jnp.float32)
 #     return X * jax.lax.rsqrt(X[:, jnp.newaxis])
 
-def rsqrt_unopt(X):
-    X = X.astype(jnp.float32)
-    return X / jnp.sqrt(X)
+# def rsqrt_unopt(X):
+#     X = X.astype(jnp.float32)
+#     return X / jnp.sqrt(X)
 
-def rsqrt_opt(X):
-    X = X.astype(jnp.float32)
-    return X * jax.lax.rsqrt(X)
+# def rsqrt_opt(X):
+#     X = X.astype(jnp.float32)
+#     return X * jax.lax.rsqrt(X)
 
 # def rsqrt_unopt(X):
 #     X = X.astype(jnp.float32)
@@ -53,3 +53,11 @@ def rsqrt_opt(X):
 # def rsqrt_opt(X):
 #     X = X.astype(jnp.float32)
 #     return X / X * jax.lax.rsqrt(X)
+
+def rsqrt_unopt(X):
+    # X = X.astype(jnp.float32)
+    return X / (X * jnp.sqrt(X)[:, jnp.newaxis])
+
+def rsqrt_opt(X):
+    X = X.astype(jnp.float32)
+    return X / X * jax.lax.rsqrt(X[:, jnp.newaxis])
