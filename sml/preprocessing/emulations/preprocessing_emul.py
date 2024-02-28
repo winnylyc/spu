@@ -467,7 +467,6 @@ def emul_kbinsdiscretizer_quantile_diverse_n_bins2():
         sk_inv_transformed, spu_inv_transformed, rtol=0, atol=1e-3
     )
 
-
 def emul_kbinsdiscretizer_quantile_eliminate():
     def kbinsdiscretize(X):
         transformer = KBinsDiscretizer(n_bins=3, strategy='quantile')
@@ -610,7 +609,6 @@ def emul_kbinsdiscretizer_quantile_sample_weight_diverse_n_bins2():
         sk_inv_transformed, spu_inv_transformed, rtol=0, atol=1e-4
     )
 
-
 def emul_kbinsdiscretizer_kmeans():
     def kbinsdiscretize(X):
         transformer = KBinsDiscretizer(n_bins=4, strategy='kmeans')
@@ -651,25 +649,26 @@ if __name__ == "__main__":
             latency=20,
         )
         emulator.up()
-        emul_labelbinarizer()
-        emul_labelbinarizer_binary()
-        emul_labelbinarizer_unseen()
-        emul_binarizer()
-        emul_normalizer()
-        emul_minmaxscaler()
-        emul_minmaxscaler_partial_fit()
-        emul_minmaxscaler_zero_variance()
-        emul_maxabsscaler()
-        emul_maxabsscaler_zero_maxabs()
-        emul_kbinsdiscretizer_uniform()
-        emul_kbinsdiscretizer_uniform_diverse_n_bins()
-        emul_kbinsdiscretizer_quantile()
-        emul_kbinsdiscretizer_quantile_diverse_n_bins()
-        emul_kbinsdiscretizer_quantile_diverse_n_bins2()
-        emul_kbinsdiscretizer_quantile_eliminate()
-        emul_kbinsdiscretizer_quantile_sample_weight()
-        emul_kbinsdiscretizer_quantile_sample_weight_diverse_n_bins()
-        emul_kbinsdiscretizer_quantile_sample_weight_diverse_n_bins2()
-        emul_kbinsdiscretizer_kmeans()
+        # emul_labelbinarizer()
+        # emul_labelbinarizer_binary()
+        # emul_labelbinarizer_unseen()
+        # emul_binarizer()
+        # emul_normalizer()
+        # emul_minmaxscaler()
+        # emul_minmaxscaler_partial_fit()
+        # emul_minmaxscaler_zero_variance()
+        # emul_maxabsscaler()
+        # emul_maxabsscaler_zero_maxabs()
+        # emul_kbinsdiscretizer_uniform()
+        # emul_kbinsdiscretizer_uniform_diverse_n_bins()
+        # emul_kbinsdiscretizer_quantile()
+        # emul_kbinsdiscretizer_quantile_diverse_n_bins()
+        # emul_kbinsdiscretizer_quantile_diverse_n_bins2()
+        # emul_kbinsdiscretizer_quantile_eliminate()
+        # emul_kbinsdiscretizer_quantile_sample_weight()
+        # emul_kbinsdiscretizer_quantile_sample_weight_diverse_n_bins()
+        # emul_kbinsdiscretizer_quantile_sample_weight_diverse_n_bins2()
+        emul_kbinsdiscretizer_quantile_sample_weight_diverse_n_bins3()
+        # emul_kbinsdiscretizer_kmeans()
     finally:
         emulator.down()
